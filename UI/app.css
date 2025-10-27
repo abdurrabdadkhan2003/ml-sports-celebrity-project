@@ -1,0 +1,200 @@
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #fafdff;
+  color: #1a2236;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.bg-animate {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 60% 22%, #2871ce21 0%, #1ef3db19 40%, transparent 72%);
+  animation: bgShift 15s alternate infinite;
+  z-index: 0;
+}
+@keyframes bgShift {
+  0%{background-position:60% 22%}
+  100%{background-position:80% 80%}
+}
+.navbar {
+  background: #0c203c;
+  color: #fff;
+  font-weight: 800;
+  font-size: 2.1rem;
+  text-align: center;
+  padding: 2.2rem 0 1.1rem 0;
+  letter-spacing: 1.3px;
+  box-shadow: 0 2px 32px #1a237e23;
+}
+.navbar-title {
+  color: #24d680;
+  text-shadow: 0 4px 22px #70ffc5b8;
+}
+.hero {
+  text-align: center;
+  margin: 2rem auto 1.2rem auto;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin: 0px 0 6px 0;
+  letter-spacing: 1.5px;
+  color: #151a36;
+  font-weight: 800;
+}
+.subtitle {
+  color: #1fa397;
+  font-size: 1.1rem;
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+}
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem auto 2rem auto;
+  width: 370px;
+  max-width: 92vw;
+  background: linear-gradient(120deg, #fff 80%, #f1fbf5 100%);
+  border-radius: 25px;
+  box-shadow: 0 10px 44px #28efbf19;
+  padding: 2.2rem 1rem 2rem 1rem;
+  z-index: 3;
+  position: relative;
+}
+.dropzone {
+  border: 2.6px dashed #1fa39799;
+  background: #fafafa;
+  border-radius: 18px;
+  min-height: 180px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  transition: border-color 0.23s, background 0.23s;
+}
+.dropzone.dz-drag-hover {
+  border-color: #2ed884;
+  background: #edfcf0;
+}
+.dz-preview {
+  animation: fadeInUp 0.66s;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.classify-btn {
+  display: block;
+  margin: 1.2rem auto 0 auto;
+  background: linear-gradient(99deg, #30f5a7 7%, #43baeb 93%);
+  color: #fff;
+  border: none;
+  border-radius: 2.2rem;
+  box-shadow: 0 0 12px #43ebdc90;
+  font-size: 1.11rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  padding: 1.03rem 2.2rem;
+  outline: none;
+  opacity: 0.99;
+  cursor: pointer;
+  transition: transform 0.25s, background 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 3;
+  animation: bounce 2.2s infinite alternate;
+}
+@keyframes bounce {
+  0%{transform:translateY(0px)}
+  40%{transform:translateY(-10px)}
+  60%{transform:translateY(8px)}
+  100%{transform:translateY(0px)}
+}
+.bounce-in { animation: bounce 2.2s infinite alternate; }
+.classify-btn:hover {
+  background: linear-gradient(97deg, #12e88a 39%, #009adf 100%);
+  color: #fff;
+  transform: scale(1.077);
+}
+#results {
+  margin: 1.5rem auto 3rem auto;
+  border-radius: 1.3rem;
+  background: #fff;
+  box-shadow: 0 7px 32px #28d1c61e;
+  padding: 1.18rem 1.4rem;
+  max-width: 550px;
+  color: #2ed884;
+  font-size: 1.10rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  min-height: 50px;
+  animation: fadeInUp 1s;
+}
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 0px 0;
+  font-size: 1.09rem;
+}
+.results-table th,
+.results-table td {
+  padding: 0.53rem 0.82rem;
+  font-size: 1.06rem;
+  font-weight: 700;
+}
+.results-table th {
+  background: #39b144;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 0.03rem;
+  border: 1px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+.results-table td {
+  border: 1px solid #e0efeb;
+  color: #111c3b;
+  background: #f6fff6;
+}
+.result-winner {
+  background: #b7ffcb86 !important;
+  font-weight: bold;
+  font-size: 1.13rem;
+}
+.results-table .profile-cell {
+  width: 40px;
+  padding: 0.3rem 0.1rem;
+}
+.results-table img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid #2ed884aa;
+  object-fit: cover;
+  box-shadow: 0 2px 7px #1fa39730;
+  background: #f4f4f4;
+}
+.confetti {
+  position: fixed;
+  top: 0;
+  width: 8px;
+  height: 18px;
+  border-radius: 3px;
+  opacity: 0.72;
+  z-index: 1000;
+  animation: dropConfetti 1.8s ease-out forwards;
+}
+@keyframes dropConfetti {
+  0% { top: -30px; opacity: 0.8;}
+  85% { opacity:1;}
+  100% { top: 98vh; opacity:0.05;}
+}
+@media (max-width: 600px) {
+  .upload-card, #results { width: 97vw; max-width: 99vw;}
+  .navbar-title { font-size: 1.1rem;}
+  .hero h1 { font-size: 1.18rem; }
+  .results-table th, .results-table td {
+    font-size: .93rem;
+    padding: 0.38rem 0.12rem;
+  }
+}
